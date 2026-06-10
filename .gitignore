@@ -1,0 +1,15 @@
+# Target directory (Maven build outputs)
+target/
+build/
+
+# IDE specific files
+.settings/
+.project
+.classpath
+*.iml
+.idea/
+*.class
+
+# OS specific files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,131 @@
+/* --- CSS VARIABLES (The Design System) --- */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f7; /* Apple's signature light gray */
+    --text-primary: #1d1d1f;
+    --text-secondary: #86868b;
+    --accent: #0071e3; /* Subtle blue for links if needed */
+    --border-color: rgba(0, 0, 0, 0.1);
+    --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- RESET & GLOBAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* --- TYPOGRAPHY --- */
+h1 {
+    font-size: 56px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.07143;
+}
+
+p.subtitle {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-top: 10px;
+}
+
+/* --- NAVBAR (Glassmorphism) --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 54px;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: saturate(180%) blur(20px); /* The Apple Glass Effect */
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+.nav-links a.logo {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* --- BUTTONS --- */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--text-primary);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 980px; /* Pill shape */
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 400;
+    margin-top: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #000;
+    transform: scale(1.02);
+}
+
+/* --- LAYOUT UTILITIES --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 120px 0;
+    text-align: center;
+}
+
+.bg-gray {
+    background-color: var(--bg-secondary);
+}
+
+/* --- FADE IN ANIMATION --- */
+.fade-in {
+    animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
