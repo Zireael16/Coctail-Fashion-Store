@@ -160,7 +160,7 @@ private static final String PASSWORD =
 1. Clone the repository.
 
 ```bash
-git clone https://github.com/yourusername/ecommerce-application.git
+git clone https://github.com/yourusername/Coctail-Fashion-Store.git
 ```
 
 2. Import the project into Eclipse as a Dynamic Web Project.
